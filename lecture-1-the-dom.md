@@ -18,6 +18,8 @@ The DOM is a data structure that we can read and modify.
 
 It acts as a _live_ data structure. When it's modified, the page on the screen is updated. 🤯
 
+<!-- live -- refreshes automatically -->
+
 ---
 
 ## So what does DOM look like?
@@ -28,7 +30,7 @@ It looks _almost_ identical to the HTML you wrote...
 
 ---
 
-The DOM is actually your _corrected_ HTML. 
+The DOM is actually your _corrected_ HTML.
 
 ⚠️ This means that it is actually impossible to debug your HMTL with devTools.
 
@@ -87,7 +89,12 @@ Instead, we will use these methods
 
 ```js
 // Example
-
+document.getElementById("my-id");
+document.querySelector("body");
+document.querySelector("#my-id");
+document.querySelector(".my.class");
+document.querySelector("div.bacon > ul");
+document.querySelector("div.bacon ul.list");
 ```
 
 ---
@@ -98,14 +105,15 @@ Instead, we will use these methods
 
 ### Modify a Leaf
 
-You can modify the content of a leaf, an end node with 
+You can modify the content of a leaf, an end node with
 
-- [`.innerText()`](https://www.w3schools.com/jsref/prop_node_innertext.asp)
-- [`.innerHTML()`](https://www.w3schools.com/jsref/prop_html_innerhtml.asp) 
+- [`.innerText`](https://www.w3schools.com/jsref/prop_node_innertext.asp)
+- [`.innerHTML`](https://www.w3schools.com/jsref/prop_html_innerhtml.asp)
 
 ```js
 // Example
-
+const myTitle = document.getElementById("my-title");
+myTitle.innerText = "New Title";
 ```
 
 ---
@@ -127,6 +135,16 @@ To add a new node to an HTML page, you need to do it in 3 steps.
 
 ```js
 // Example
+//1. create a new node
+const paragraph = document.createElement('p');
+//2. add content to new node
+paragraph.innerText = 'new hacker right here.'
+document.querySelector('body').apprendChild(paragraph);
+
+
+// to add an Id
+
+paragraph.id = 'new-id';
 
 ```
 
@@ -149,9 +167,11 @@ We can style elements from JavaScript.
 `<div id="my-div">...content...</div>`
 
 ```js
-const myDiv = document.getElementById('my-div');
+const myDiv = document.getElementById("my-div");
 
 myDiv.style.background = "purple";
+myDiv.style.borderRadius = '23px';
+//camelcasing is needed if you style inline. camelcasing in js adds the dashes
 ```
 
 ⚠️ Houston. We have a problem!
@@ -178,12 +198,17 @@ To modify a `classList`, we have a few methods we can call.
 
 ```js
 // Example
-myDiv.classList.add('primary');
+myDiv.classList.add("primary");
+//add just adds it in the html
 
-myDiv.classList.remove('secondary');
 
-myDiv.classList.toggle('active');
+myDiv.classList.remove("secondary");
+
+myDiv.classList.toggle("active");
+
+//toggle activate and deactive something
 ```
+
 ---
 
 [Next lecture: Fundamentals (delay/timing)](../lecture-2-fundamentals-delay)

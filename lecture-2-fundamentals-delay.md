@@ -6,7 +6,11 @@
 
 ```js
 // Example
+setTimeout(function(){
+ console.log('Hello');
+}, 3000);
 
+//after 3 seconds or 3000 milliseconds
 ```
 
 ---
@@ -15,7 +19,12 @@
 
 ```js
 // Example
+const myTimer = setInterval(function(){
+ console.log('Hello')
+}, 3000);
 
+//to stop the interval
+clearInterval(myTimer);
 ```
 
 ---

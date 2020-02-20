@@ -49,3 +49,12 @@ document.querySelector("div").appendChild(image);
 document.querySelector("div").appendChild(paragraph3);
 document.querySelector("div").appendChild(paragraph4);
 document.querySelector("div").appendChild(link);
+
+// header1.className = "h1";
+// header2.className = "h2";
+// paragraph1.className = "p";
+// paragraph2.className = "p";
+// paragraph3.className = "p";
+// paragraph4.className = "p";
+// image.className = "img";
+// link.className = "a";

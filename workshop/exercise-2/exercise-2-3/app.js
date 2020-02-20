@@ -7,12 +7,22 @@ for (i = 1; i <= FROGS; i++) {
   let lane = document.createElement("li");
   track.appendChild(lane);
 
+  // 3. Create span and add it to the li
   let span = document.createElement("span");
   span.innerText = i;
   lane.appendChild(span);
+
+  // 4. Assign an id to each lane
+  //lane creation phase
   lane.id = "lane-" + i;
 }
 
-// 3. Create span and add it to the li
+let racers = [];
 
-// 4. Assign an id to each lane
+for (let i = 0; i < FROGS; i++) {
+  const newRacers = frogStable[i];
+  racers.push(newRacers);
+}
+console.log(racers);
+
+
