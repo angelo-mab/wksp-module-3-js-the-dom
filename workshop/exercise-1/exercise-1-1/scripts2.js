@@ -49,12 +49,3 @@ document.querySelector("div").appendChild(image);
 document.querySelector("div").appendChild(paragraph3);
 document.querySelector("div").appendChild(paragraph4);
 document.querySelector("div").appendChild(link);
-
-header1.classList.add('h1');
-header2.classList.add('h2');
-paragraph1.classList.add('p');
-paragraph2.classList.add('p');
-paragraph3.classList.add('p');
-paragraph4.classList.add('p');
-image.classList.add('image');
-link.classList.add('link');

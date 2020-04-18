@@ -63,3 +63,31 @@ racers.forEach((racer, id) => {
   frogProgress.id = racers[id].name;
   document.getElementById(`lane-${id + 1}`).appendChild(frogProgress);
 })
+
+
+// 2.4
+
+function racingFrog(racer) {
+  let progress = racer.progress;  // takes the progess that we have injected into racer in 2.3.6
+  const trackWidth = track.offsetWidth; // takes the width of the whole span 
+
+  const hopLength = (Math.floor(Math.random() * 100) / trackWidth * 100); // random hop length
+
+  const bounce = setInterval(function () {
+    progress += hopLength;
+
+    if (progress > 100) {
+      // if progress is more than 100%, sets progress to 100.1 and console.log's the racers name, that they have finished and that they would stop bouncing
+      progress = 100.1;
+      console.log(racer.name, ' has finished!');
+      clearInterval(bounce);
+    }
+    console.log(racer);
+    document.querySelector(`${racer.lane} .frog`).style.left = `${progress}%`;
+  }, Math.random() * 1000);
+}
+
+// this will initiate the race
+racers.forEach(function (racer) {
+  racingFrog(racer);
+});

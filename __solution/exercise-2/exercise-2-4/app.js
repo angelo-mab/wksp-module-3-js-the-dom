@@ -66,7 +66,7 @@ function racingFrog(racer) {
             console.log(racer.name, ' has finished!');
             clearInterval(bounce);
         }
-        
+
         // Moving the frog on the screen
         document.querySelector(`#${racer.lane} .frog`).style.left = `${progress}%`;
     }, Math.random() * 1000);

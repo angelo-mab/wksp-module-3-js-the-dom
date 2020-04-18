@@ -1,25 +1,42 @@
 // Preset values
 const FROGS = 3;
+
 const track = document.getElementById("track");
+
 // 1. Create for loop that makes use of FROGS to know how many lanes to create.
-for (i = 1; i <= FROGS; i++) {
-  // 2. Create li
-  let lane = document.createElement("li");
+for (let laneCount = 1; laneCount <= FROGS; laneCount++) {
+  const lane = document.createElement('li');
   track.appendChild(lane);
 
-  // 3. Create span and add it to the li
-  let span = document.createElement("span");
-  span.innerText = i;
-  lane.appendChild(span);
+  const number = document.createElement('span');
+  number.innerText = laneCount;
+  lane.appendChild(number);
 
-  // 4. Assign an id to each lane
-  lane.id = "lane-" + i;
+  lane.id = `lane-${laneCount + 1}`;
 }
 
-let racers = [];
+/**
+ * <ol class="track">
+ *   <li id="lane-1">
+ *    <span>1</span>
+ *  </li>
+ *  <li id="lane-2">
+ *      <span>2</span>
+ *   </li>
+ *  <li id="lane-3">
+ *     <span>3</span>
+ *  </li>
+ * </ol>
+*/
 
-for (let i = 0; i < FROGS; i++) {
-  const newRacers = frogStable[i];
-  racers.push(newRacers);
+// 2.2.3
+const racers = [];
+
+// 2.2.4
+for (let x = 0; x < FROGS; x++) {
+  // has access to frogStable.js
+  const newFrogs = frogStable[x];
+  racers.push(newFrogs);
+  // 2.2.5
+  console.log(newFrogs);
 }
-console.log(racers);
